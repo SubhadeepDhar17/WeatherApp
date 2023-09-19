@@ -6,6 +6,7 @@ const geocode = require('./utils/geocode.js')
 const forecast = require('./utils/forecast')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 // Define paths for express confing
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -96,6 +97,6 @@ app.get('*', (req, res) => {  //* means any link thats not specified will be sho
     })
 })
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('Server running')
 })
